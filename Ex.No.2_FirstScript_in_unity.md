@@ -1,6 +1,6 @@
 # Ex.No: 2  Welcome Script in Unity                                                                        
 ### REGISTER NUMBER : 212223220108
-## NAME: SOUNDARYA J
+### NAME: SOUNDARYA J
 ### AIM: 
  To learn the basic scripting in Unity and print welcome message in Console window. 
 ### Procedure:
