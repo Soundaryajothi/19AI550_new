@@ -1,5 +1,4 @@
-# Ex.No: 1  Installation of Unity for Game Development
-### DATE: 23.10.2026                                                                           
+# Ex.No: 1  Installation of Unity for Game Development                                                                         
 ### REGISTER NUMBER : 212223220108
 ### NAME: SOUNDARYA J
 ### AIM: 
