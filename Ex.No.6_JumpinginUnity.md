@@ -71,6 +71,4 @@ using UnityEngine;
 
 ### Result:
 Thus the simple seek behavior was implemented successfully.
-
-
-ng behavior was implemented successfully.
+.
