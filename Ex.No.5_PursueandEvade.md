@@ -1,6 +1,7 @@
 # Ex.No: 5  Implementation of Steering behaviour-Pursue and Evade in Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### REGISTER NUMBER : 212223240112
+## NAME : SOUNDARYA J
+
 ### AIM: 
 To write a program to simulate the process of Pursue and Evade behavior in Unity using NavigationMeshAgent. 
 ### Algorithm:
@@ -15,13 +16,13 @@ To write a program to simulate the process of Pursue and Evade behavior in Unity
   Rename them to "Player", "Pursuer", and "Evader".
   Set their Y Position to 0.5 (so they sit on the ground).
   Change their Material for better distinction (optional).
-3. Check AI navigation in window.
- Window → AI → Navigation (opens the Navigation tab).  If it is not available then add package by name "com.unity.ai.navigation"
-4. Select the Plane, go to the Navigation tab, and mark it as Navigation Static.
+3. Add NavMesh and Bake
+   Window → AI → Navigation (opens the Navigation tab).
+   Select the Plane, go to the Navigation tab, and mark it as Navigation Static.
    Go to the Bake tab and click Bake.
    or
    Add navMeshSurface to plane and bake 
-4. Add NavMeshAgent Component 
+4. Add NavMeshAgent Component
     Select Pursuer, and Evader.
     Click Add Component → Search for NavMeshAgent and add it.
     Adjust NavMeshAgent Settings:
@@ -29,6 +30,9 @@ To write a program to simulate the process of Pursue and Evade behavior in Unity
     Pursuer: Set Speed = 4.
     Evader: Set Speed = 6.
 5. Write a script for  Player_movement behavior and save it
+```
+## PROGRAM
+```#C
 
 using System.Collections;
 using System.Collections.Generic;
@@ -40,8 +44,8 @@ public class Player_movement : MonoBehaviour
     public float speed;
     void Start()
     {
-        float xdir = Input.GetAxis("Horizontal") * speed;
-        float zdir = Input.GetAxis("Vertical") * speed;
+        float xdir = Input.GetAxis("horizontal") * speed;
+        float zdir = Input.GetAxis("vertical") * speed;
         transform.position=new Vector3(xdir,zdir);
     }
 
@@ -80,7 +84,7 @@ public class Evader : MonoBehaviour
 public class Pursuer: MonoBehaviour
 {
     // Start is called before the first frame update
-    public NavMeshAgent agent;
+    NavMeshAgent agent;
     public Transform target;
     public float speed;
     void Start()
@@ -92,7 +96,7 @@ public class Pursuer: MonoBehaviour
     {
        Vector3 targetvelocity=target.position-transform.position;
        Vector3 futurepos = transform.position + targetvelocity.normalized*speed;
-       agent.SetDestination(futurepos);
+       agent.SetDestination(target.position);
     } 
     // Update is called once per frame
     void Update()
@@ -107,6 +111,10 @@ public class Pursuer: MonoBehaviour
     
 ```
 ### Output:
+
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/320618b1-44be-4c64-8072-0f4a8b5faded" />
+
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/9d08be07-9e6e-4c10-a579-bfaaacef45e7" />
 
 
 
