@@ -1,6 +1,6 @@
 # Experiment 6: Implementing Jumping Behavior in Unity 
-### DATE:   25-03-2025
-### REGISTER NUMBER : 212223240112
+### REGISTER NUMBER : 212223220108
+### NAME: SOUNDARYA J
 ### AIM: 
 To implement a jumping behavior for a player-controlled character in Unity using Rigidbody physics and user input, where pressing the spacebar while in the air causes the player to move down. 
 ### Algorithm:
