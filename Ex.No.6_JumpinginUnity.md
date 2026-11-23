@@ -1,8 +1,8 @@
-# Ex.No: 6  Implementation of Jumping  behaviour- Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+# Experiment 6: Implementing Jumping Behavior in Unity 
+### DATE:   25-03-2025
+### REGISTER NUMBER : 212223240112
 ### AIM: 
-To write a program to simulate the process of jumping in Unity.
+To implement a jumping behavior for a player-controlled character in Unity using Rigidbody physics and user input, where pressing the spacebar while in the air causes the player to move down. 
 ### Algorithm:
 ```
 1. Create a new 3D Unity project
@@ -20,36 +20,48 @@ Press Play
 Press Spacebar to jump
 Your cube should only jump when touching the ground
 ```
-###
-**Program **
+
+### Program:
 ```
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour
-{
-    private Rigidbody rb;
-    public float jumpForce = 5f;
-    
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+   public class Jump : MonoBehaviour
+   {
+       public float jumpForce = 5f;
+       private bool isGrounded;
+       private Rigidbody rb;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) )
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            
-        }
-    }
+       void Start()
+       {
+           rb = GetComponent<Rigidbody>();
+       }
 
-   
-}
+       void Update()
+       {
+           if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+           {
+               rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+               isGrounded = false;
+           }
+       }
+
+       private void OnCollisionEnter(Collision collision)
+       {
+           if (collision.gameObject.CompareTag("Ground"))
+           {
+               isGrounded = true;
+           }
+       }
+   }
 ```
+
 ### Output:
 
+## Initially player in air:
+<img width="850" alt="image" src="https://github.com/user-attachments/assets/7a669489-0f94-4e03-a42c-16db1298e719" />
 
+## After player jumped:
+<img width="850" alt="image" src="https://github.com/user-attachments/assets/3c43b7e2-e1c4-4e34-822c-ad2aff291b84" />
 
 
 
@@ -58,4 +70,7 @@ public class PlayerJump : MonoBehaviour
 
 
 ### Result:
-Thus the simple jumping behavior was implemented successfully.
+Thus the simple seek behavior was implemented successfully.
+
+
+ng behavior was implemented successfully.
