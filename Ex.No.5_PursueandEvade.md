@@ -1,6 +1,6 @@
 # Ex.No: 5  Implementation of Steering behaviour-Pursue and Evade in Unity
-### REGISTER NUMBER : 212223240112
-## NAME : SOUNDARYA J
+### REGISTER NUMBER : 212223220108
+### NAME : SOUNDARYA J
 
 ### AIM: 
 To write a program to simulate the process of Pursue and Evade behavior in Unity using NavigationMeshAgent. 
